@@ -8,4 +8,15 @@ public class GuessableChar {
 		this.characterToGuess = characterToGuess;
 	}
 
+	public char getChar(){
+		return characterToGuess;
+	}
+	
+	public boolean isGuessed(){
+		return guessed;
+	}
+
+	public void setGuessed() {
+		guessed = true;		
+	}
 }
