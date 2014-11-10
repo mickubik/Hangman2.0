@@ -1,0 +1,30 @@
+package com.game;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+
+public class AlphabetLettersGuessed {
+	private Map<Character, Boolean> alphabetLetterGuesssedMap = new LinkedHashMap<>();
+	protected static final char[] THE_ALPHABET = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 
+		'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+	
+	public AlphabetLettersGuessed(){
+		initalizeAlphabetLetterGuessedMap();
+	}
+	
+	private void initalizeAlphabetLetterGuessedMap(){
+		for (char letterInAlphabet : THE_ALPHABET){
+			alphabetLetterGuesssedMap.put(letterInAlphabet, false);
+		}
+	}
+	
+	protected Map<Character, Boolean> getAlphabetLetterGuesssedMap(){
+		return alphabetLetterGuesssedMap;
+	}
+	
+	public boolean isLetterGuessed(char charToGuess){
+		return alphabetLetterGuesssedMap.get(charToGuess);
+	}
+	
+}
