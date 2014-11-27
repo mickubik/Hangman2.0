@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Word {
 	private List<GuessableChar> word = new LinkedList<>();
+	
 
 	public Word(String newWord){
 		for (char ch: newWord.toCharArray()){
@@ -30,5 +31,13 @@ public class Word {
 				guessableCharacter.setGuessed();
 			}
 		}
+	}
+
+	public Object getGuessingDisplayForm() {
+		String wordToReturn = "";
+		for (GuessableChar guessableCharacter: word) {
+			wordToReturn += (guessableCharacter.isGuessed()) ? guessableCharacter.characterToGuess : Constants.unguessedChar;
+		}
+		return wordToReturn;
 	}
 }

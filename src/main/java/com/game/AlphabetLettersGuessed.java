@@ -26,5 +26,9 @@ public class AlphabetLettersGuessed {
 	public boolean isLetterGuessed(char charToGuess){
 		return alphabetLetterGuesssedMap.get(charToGuess);
 	}
+
+	public void setGuessed(char letterToGuess) {
+		alphabetLetterGuesssedMap.put(letterToGuess, true);		
+	}
 	
 }
