@@ -12,26 +12,26 @@ public class WordTest {
 
 	@Test
 	public void createWord() {
-		String wordToGuess = testingWord;
-		Word word = new Word(wordToGuess);
+		final String wordToGuess = testingWord;
+		final Word word = new Word(wordToGuess);
 		assertEquals(word.getWordAsString(), wordToGuess);
 	}
 
 	@Test
 	public void noLetterIsGuessedInNewWord() {
-		Word word = new Word(testingWord);
-		for (GuessableChar guessableCharacter: word.getWord()) {
+		final Word word = new Word(testingWord);
+		for (final GuessableChar guessableCharacter: word.getWord()) {
 			assertFalse(guessableCharacter.isGuessed());
 		}
 	}
 
 	@Test
 	public void letterInWordIsSetToGuessedAfterBeingGuessed() {
-		char charToGuess = 't';
-		Word word = new Word(testingWord);
+		final char charToGuess = 't';
+		final Word word = new Word(testingWord);
 		word.guessLetter(charToGuess);
-		for (GuessableChar guessableCharacter: word.getWord()) {
-			if (guessableCharacter.getChar() == charToGuess){
+		for (final GuessableChar guessableCharacter: word.getWord()) {
+			if (guessableCharacter.getChar() == charToGuess) {
 				assertTrue(guessableCharacter.isGuessed());
 			}
 		}

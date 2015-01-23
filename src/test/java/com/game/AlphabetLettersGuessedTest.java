@@ -11,27 +11,27 @@ public class AlphabetLettersGuessedTest {
 
 	@Test
 	public void createAlphabetLettersGuessedTest() {
-		AlphabetLettersGuessed alphabetLettersGuessed = new AlphabetLettersGuessed();
+		final AlphabetLettersGuessed alphabetLettersGuessed = new AlphabetLettersGuessed();
 	}
 
 	@Test
 	public void initalizeAlphabetLetterGuessedMapTest() {
-		AlphabetLettersGuessed alphabetLettersGuessed = new AlphabetLettersGuessed();
+		final AlphabetLettersGuessed alphabetLettersGuessed = new AlphabetLettersGuessed();
 		assertEquals(alphabetLettersGuessed.getAlphabetLetterGuesssedMap().size(), SIZE_OF_ALPHABET);
 	}
 
 	@Test
-	public void noLettersInitiallyGuessedTest(){
-		AlphabetLettersGuessed alphabetLettersGuessed = new AlphabetLettersGuessed();
-		for (char letterInAlphabet : alphabetLettersGuessed.THE_ALPHABET){
+	public void noLettersInitiallyGuessedTest() {
+		final AlphabetLettersGuessed alphabetLettersGuessed = new AlphabetLettersGuessed();
+		for (final char letterInAlphabet : alphabetLettersGuessed.THE_ALPHABET){
 			assertFalse(alphabetLettersGuessed.isLetterGuessed(letterInAlphabet));
 		}
 	}
 
 	@Test
-	public void letterGetsSetToGuessed(){
-		char letterToGuess = 'C';
-		AlphabetLettersGuessed alphabetLettersGuessed = new AlphabetLettersGuessed();
+	public void letterGetsSetToGuessed() {
+		final char letterToGuess = 'C';
+		final AlphabetLettersGuessed alphabetLettersGuessed = new AlphabetLettersGuessed();
 		alphabetLettersGuessed.setGuessed(letterToGuess);
 		assertTrue(alphabetLettersGuessed.isLetterGuessed(letterToGuess));
 	}

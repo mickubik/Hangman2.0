@@ -1,5 +1,7 @@
 package com.word;
 
+import i18n.I18n;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -36,7 +38,7 @@ public class Word {
 	public Object getGuessingDisplayForm() {
 		String wordToReturn = "";
 		for (GuessableChar guessableCharacter: word) {
-			wordToReturn += (guessableCharacter.isGuessed()) ? guessableCharacter.characterToGuess : Constants.unguessedChar;
+			wordToReturn += (guessableCharacter.isGuessed()) ? guessableCharacter.characterToGuess : I18n.UNGUESSED_LETTER;
 		}
 		return wordToReturn;
 	}
